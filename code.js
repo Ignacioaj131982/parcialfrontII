@@ -39,22 +39,26 @@ function obtenerDatosDelUsuario() {
   let identificarEdad = document.getElementById("edad");
   let identificarCiudad = document.getElementById("ciudad");
   let interesaJs = document.getElementById("javascript");
+
   let obtenerNombre = prompt(`Por favor ingrese su nombre`);
   datosPersona.nombre = obtenerNombre;
   identificarNombre.textContent = obtenerNombre;
+
   let obtenerEdad = parseInt(prompt("Ingresa el año que naciste"));
   let anioactual = new Date().getFullYear();
   datosPersona.edad = anioactual - obtenerEdad;
   identificarEdad.textContent = datosPersona.edad;
+
   let obtenerCiudad = prompt(`Ingresa la ciudad donde vives`);
   datosPersona.ciudad = obtenerCiudad;
   identificarCiudad.textContent = obtenerCiudad;
+
   let obtenerPreferenciaJs = confirm(`Te interesa JS?`);
   if (obtenerPreferenciaJs) {
-    datosPersona.interesPorJs = obtenerPreferenciaJs;
+    datosPersona.interesPorJs = "Si";
     interesaJs.textContent = `Si`;
   } else {
-    datosPersona.interesPorJs = obtenerPreferenciaJs;
+    datosPersona.interesPorJs = "No";
     interesaJs.textContent = `No`;
   }
 }
@@ -65,6 +69,15 @@ function renderizarDatosUsuario() {
   /* ------------------- NO TOCAR NI ELIMINAR ESTA FUNCION. ------------------- */
   obtenerDatosDelUsuario();
   /* --------------- PUNTO 2: Escribe tu codigo a partir de aqui --------------- */
+  let identificarNombre = document.getElementById("nombre");
+  let identificarEdad = document.getElementById("edad");
+  let identificarCiudad = document.getElementById("ciudad");
+  let interesaJs = document.getElementById("javascript");
+
+  identificarNombre.textContent = datosPersona.nombre;
+  identificarEdad.textContent = datosPersona.edad;
+  identificarCiudad.textContent = datosPersona.ciudad;
+  interesaJs.textContent = datosPersona.interesPorJs;
   
 
 
