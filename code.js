@@ -116,4 +116,13 @@ function alternarColorTema() {
 }
 
 /* --------------------- PUNTO 5: Escribe tu codigo aqui --------------------- */
+let miTecla = document.getElementById('sobre-mi');
+let oculto = document.querySelector('.oculto');
+document.addEventListener('keypress', function(event){
+  if (event.key === 'f') {
+    oculto.style.visibility = 'visible';
+
+  }
+
+});
 
