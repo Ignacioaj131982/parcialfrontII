@@ -82,27 +82,31 @@ function renderizarDatosUsuario() {
 
 function recorrerListadoYRenderizarTarjetas() {
   /* ------------------ PUNTO 3: Escribe tu codigo desde aqui ------------------ */
-  let crearDivCaja1 = document.createElement(`div`);
+  let fila = document.getElementById(`fila`);
+
+  listado.forEach(item => {
+    let crearDivCaja1 = document.createElement(`div`);
   crearDivCaja1.className = `caja`;
-  let crearDivCaja2 = document.createElement(`div`);
-  crearDivCaja1.className = `caja`;
-  let crearDivCaja3 = document.createElement(`div`);
-  crearDivCaja1.className = `caja`;
+
   let imagenCaja = document.createElement(`img`);
-  imagenCaja.src = listado.imgUrl;
-  imagenCaja.alt = listado.lenguajes;
+  imagenCaja.src = item.imgUrl;
+  imagenCaja.alt = item.lenguajes;
+
   let parrafoDeTexto = document.createElement(`p`);
   parrafoDeTexto.className = `lenguajes`;
-  parrafoDeTexto.textContent = listado.lenguajes;
+  parrafoDeTexto.textContent = item.lenguajes;
+  let parrafoDeTexto2 = document.createElement(`p`);
+  parrafoDeTexto2.className = `bimestre`;
+  parrafoDeTexto2.textContent = item.bimestre;
+
+  crearDivCaja1.appendChild(imagenCaja);
+  crearDivCaja1.appendChild(parrafoDeTexto);
+  crearDivCaja1.appendChild(parrafoDeTexto2);
+  fila.appendChild(crearDivCaja1);
+
+  });
   
-  document.body.appendChild(crearDivCaja1);
-  document.body.appendChild(crearDivCaja2);
-  document.body.appendChild(crearDivCaja3);
-
-
-  
-
-
+  materiasBtn.removeEventListener("click", recorrerListadoYRenderizarTarjetas);
 }
 
 function alternarColorTema() {
