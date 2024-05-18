@@ -111,10 +111,8 @@ function recorrerListadoYRenderizarTarjetas() {
 
 function alternarColorTema() {
   /* --------------------- PUNTO 4: Escribe tu codigo aqui --------------------- */
- 
-  
-
-
+  let modoObscuro = document.getElementById("sitio");
+  modoObscuro.classList.toggle('dark'); 
 }
 
 /* --------------------- PUNTO 5: Escribe tu codigo aqui --------------------- */
