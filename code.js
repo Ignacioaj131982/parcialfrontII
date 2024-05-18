@@ -64,7 +64,6 @@ function obtenerDatosDelUsuario() {
 }
 
 
-
 function renderizarDatosUsuario() {
   /* ------------------- NO TOCAR NI ELIMINAR ESTA FUNCION. ------------------- */
   obtenerDatosDelUsuario();
@@ -78,14 +77,29 @@ function renderizarDatosUsuario() {
   identificarEdad.textContent = datosPersona.edad;
   identificarCiudad.textContent = datosPersona.ciudad;
   interesaJs.textContent = datosPersona.interesPorJs;
-  
-
-
 }
 
 
 function recorrerListadoYRenderizarTarjetas() {
   /* ------------------ PUNTO 3: Escribe tu codigo desde aqui ------------------ */
+  let crearDivCaja1 = document.createElement(`div`);
+  crearDivCaja1.className = `caja`;
+  let crearDivCaja2 = document.createElement(`div`);
+  crearDivCaja1.className = `caja`;
+  let crearDivCaja3 = document.createElement(`div`);
+  crearDivCaja1.className = `caja`;
+  let imagenCaja = document.createElement(`img`);
+  imagenCaja.src = listado.imgUrl;
+  imagenCaja.alt = listado.lenguajes;
+  let parrafoDeTexto = document.createElement(`p`);
+  parrafoDeTexto.className = `lenguajes`;
+  parrafoDeTexto.textContent = listado.lenguajes;
+  
+  document.body.appendChild(crearDivCaja1);
+  document.body.appendChild(crearDivCaja2);
+  document.body.appendChild(crearDivCaja3);
+
+
   
 
 
